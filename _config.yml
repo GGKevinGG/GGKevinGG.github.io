@@ -104,4 +104,4 @@ theme: next
 deploy:
   type: git
   repo: git@github.com:GGKevinGG/GGKevinGG.github.io.git
-  branch: master
+  branch: hexo
