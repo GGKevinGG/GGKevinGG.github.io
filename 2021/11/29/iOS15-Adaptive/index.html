@@ -20,23 +20,28 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.8.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
-<meta property="og:type" content="website">
-<meta property="og:title" content="Monsieur W.">
-<meta property="og:url" content="http://example.com/index.html">
+<meta name="description" content="手机升级iOS 15系统以后，通过Xcode 13编译以后，界面显示出现视图问题 UINavigationBar和UITabBar问题: 设置颜色方法在iOS 15中失效了 在iOS 13更新的API中新增了针对navigationBar,tabbar分别新增了新的属性专门管理这些滑动时候产生的颜色透明等等信息，由于我们app根据业务要求还需要向下兼容iOS 9和iOS 10等等，对于导航栏的设置">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS15 适配总结">
+<meta property="og:url" content="http://example.com/2021/11/29/iOS15-Adaptive/index.html">
 <meta property="og:site_name" content="Monsieur W.">
+<meta property="og:description" content="手机升级iOS 15系统以后，通过Xcode 13编译以后，界面显示出现视图问题 UINavigationBar和UITabBar问题: 设置颜色方法在iOS 15中失效了 在iOS 13更新的API中新增了针对navigationBar,tabbar分别新增了新的属性专门管理这些滑动时候产生的颜色透明等等信息，由于我们app根据业务要求还需要向下兼容iOS 9和iOS 10等等，对于导航栏的设置">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-11-29T07:29:38.000Z">
+<meta property="article:modified_time" content="2021-12-03T13:25:12.395Z">
 <meta property="article:author" content="Monsieur W.">
+<meta property="article:tag" content="iOS">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://example.com/">
+<link rel="canonical" href="http://example.com/2021/11/29/iOS15-Adaptive/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2021/11/29/iOS15-Adaptive/","path":"2021/11/29/iOS15-Adaptive/","title":"iOS15 适配总结"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Monsieur W.</title>
+<title>iOS15 适配总结 | Monsieur W.</title>
   
 
 
@@ -65,7 +70,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">Monsieur W.</h1>
+      <p class="site-title">Monsieur W.</p>
       <i class="logo-line"></i>
     </a>
   </div>
@@ -101,7 +106,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -114,6 +119,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#UINavigationBar%E5%92%8CUITabBar"><span class="nav-number">1.</span> <span class="nav-text">UINavigationBar和UITabBar</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UITableView"><span class="nav-number">2.</span> <span class="nav-text">UITableView</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -164,17 +170,19 @@
 </noscript>
 
 
-    <div class="main-inner index posts-expand">
+    <div class="main-inner post posts-expand">
 
-    
+
+  
 
 
 <div class="post-block">
   
   
 
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/29/iOS15-Adaptive/">
+
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="Monsieur W.">
@@ -185,9 +193,9 @@
       <meta itemprop="name" content="Monsieur W.">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/11/29/iOS15-Adaptive/" class="post-title-link" itemprop="url">iOS15 适配总结</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          iOS15 适配总结
+        </h1>
 
         <div class="post-meta-container">
           <div class="post-meta">
@@ -196,6 +204,7 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
+
       <time title="创建时间：2021-11-29 15:29:38" itemprop="dateCreated datePublished" datetime="2021-11-29T15:29:38+08:00">2021-11-29</time>
     </span>
     <span class="post-meta-item">
@@ -225,7 +234,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>手机升级iOS 15系统以后，通过Xcode 13编译以后，界面显示出现视图问题</p>
+        <p>手机升级iOS 15系统以后，通过Xcode 13编译以后，界面显示出现视图问题</p>
 <h2 id="UINavigationBar和UITabBar"><a href="#UINavigationBar和UITabBar" class="headerlink" title="UINavigationBar和UITabBar"></a>UINavigationBar和UITabBar</h2><p>问题: 设置颜色方法在iOS 15中失效了</p>
 <p>在iOS 13更新的API中新增了针对navigationBar,tabbar分别新增了新的属性专门管理这些滑动时候产生的颜色透明等等信息，由于我们app根据业务要求还需要向下兼容iOS 9和iOS 10等等，对于导航栏的设置还没有使用UINavigationBarAppearance和UITabBarAppearance来设置，导致更新iOS 15以后原有设置方式就失效了。</p>
 <p>使用</p>
@@ -243,7 +252,6 @@
 
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>总的来说，iOS 15的工作量较小，适配相对简单易行~~</p>
 
-      
     </div>
 
     
@@ -251,11 +259,16 @@
     
 
     <footer class="post-footer">
-        <div class="post-eof"></div>
-      
+          <div class="post-tags">
+              <a href="/tags/iOS/" rel="tag"># iOS</a>
+          </div>
+
+        
+
     </footer>
   </article>
 </div>
+
 
 
 
