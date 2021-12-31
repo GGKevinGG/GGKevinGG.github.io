@@ -20,28 +20,27 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.8.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
-<meta name="description" content="手机升级iOS 15系统以后，通过Xcode 13编译以后，界面显示出现视图问题 UINavigationBar和UITabBar问题: 设置颜色方法在iOS 15中失效了 在iOS 13更新的API中新增了针对navigationBar,tabbar分别新增了新的属性专门管理这些滑动时候产生的颜色透明等等信息，由于我们app根据业务要求还需要向下兼容iOS 9和iOS 10等等，对于导航栏的设置">
+<meta name="description" content="回顾今年是2021年的最后一天了，距离2022年也就剩几个小时了，不经感叹时光过得可真快啊。回想这一年来的种种瞬间，经历的事情，内心可谓五味杂陈。趁着最后的几个小时的时间，本人就把今年所经历的事情做一个回顾。 离别说起离别一词，总是会想到有再见的一天。但有时候却再也见不到了。 今年四月份，我的爷爷过世了，从此与他阴阳相隔。过世前，子女，孙辈都纷纷赶回老家，看望病重的爷爷，因为大家心里都知道，见一面">
 <meta property="og:type" content="article">
-<meta property="og:title" content="iOS15 适配总结">
-<meta property="og:url" content="http://example.com/2021/11/29/iOS15-Adaptive/index.html">
+<meta property="og:title" content="回顾2021年">
+<meta property="og:url" content="http://example.com/2021/12/31/Looking-back-at-2021/index.html">
 <meta property="og:site_name" content="Monsieur W.">
-<meta property="og:description" content="手机升级iOS 15系统以后，通过Xcode 13编译以后，界面显示出现视图问题 UINavigationBar和UITabBar问题: 设置颜色方法在iOS 15中失效了 在iOS 13更新的API中新增了针对navigationBar,tabbar分别新增了新的属性专门管理这些滑动时候产生的颜色透明等等信息，由于我们app根据业务要求还需要向下兼容iOS 9和iOS 10等等，对于导航栏的设置">
+<meta property="og:description" content="回顾今年是2021年的最后一天了，距离2022年也就剩几个小时了，不经感叹时光过得可真快啊。回想这一年来的种种瞬间，经历的事情，内心可谓五味杂陈。趁着最后的几个小时的时间，本人就把今年所经历的事情做一个回顾。 离别说起离别一词，总是会想到有再见的一天。但有时候却再也见不到了。 今年四月份，我的爷爷过世了，从此与他阴阳相隔。过世前，子女，孙辈都纷纷赶回老家，看望病重的爷爷，因为大家心里都知道，见一面">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-11-29T07:29:38.000Z">
-<meta property="article:modified_time" content="2021-12-03T13:25:12.395Z">
+<meta property="article:published_time" content="2021-12-31T13:38:06.000Z">
+<meta property="article:modified_time" content="2021-12-31T15:01:32.412Z">
 <meta property="article:author" content="Monsieur W.">
-<meta property="article:tag" content="iOS">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://example.com/2021/11/29/iOS15-Adaptive/">
+<link rel="canonical" href="http://example.com/2021/12/31/Looking-back-at-2021/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2021/11/29/iOS15-Adaptive/","path":"2021/11/29/iOS15-Adaptive/","title":"iOS15 适配总结"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2021/12/31/Looking-back-at-2021/","path":"2021/12/31/Looking-back-at-2021/","title":"回顾2021年"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>iOS15 适配总结 | Monsieur W.</title>
+<title>回顾2021年 | Monsieur W.</title>
   
 
 
@@ -119,7 +118,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#UINavigationBar%E5%92%8CUITabBar"><span class="nav-number">1.</span> <span class="nav-text">UINavigationBar和UITabBar</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UITableView"><span class="nav-number">2.</span> <span class="nav-text">UITableView</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9E%E9%A1%BE"><span class="nav-number">1.</span> <span class="nav-text">回顾</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A6%BB%E5%88%AB"><span class="nav-number">1.1.</span> <span class="nav-text">离别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%80%8C%E7%AB%8B%E4%B9%8B%E5%B9%B4"><span class="nav-number">1.2.</span> <span class="nav-text">而立之年</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%8F%E6%A3%89%E8%A2%84"><span class="nav-number">1.3.</span> <span class="nav-text">小棉袄</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B6%E5%AE%83"><span class="nav-number">1.4.</span> <span class="nav-text">其它</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%B9%E6%9C%AA%E6%9D%A5%E7%9A%84%E8%A7%84%E5%88%92"><span class="nav-number">2.</span> <span class="nav-text">对未来的规划</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -181,7 +180,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/29/iOS15-Adaptive/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/31/Looking-back-at-2021/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -194,7 +193,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          iOS15 适配总结
+          回顾2021年
         </h1>
 
         <div class="post-meta-container">
@@ -204,15 +203,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
+      
 
-      <time title="创建时间：2021-11-29 15:29:38" itemprop="dateCreated datePublished" datetime="2021-11-29T15:29:38+08:00">2021-11-29</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2021-12-03 21:25:12" itemprop="dateModified" datetime="2021-12-03T21:25:12+08:00">2021-12-03</time>
+      <time title="创建时间：2021-12-31 21:38:06 / 修改时间：23:01:32" itemprop="dateCreated datePublished" datetime="2021-12-31T21:38:06+08:00">2021-12-31</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -220,7 +213,7 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">技术</span></a>
+          <a href="/categories/%E7%94%9F%E6%B4%BB/" itemprop="url" rel="index"><span itemprop="name">生活</span></a>
         </span>
     </span>
 
@@ -234,23 +227,16 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>手机升级iOS 15系统以后，通过Xcode 13编译以后，界面显示出现视图问题</p>
-<h2 id="UINavigationBar和UITabBar"><a href="#UINavigationBar和UITabBar" class="headerlink" title="UINavigationBar和UITabBar"></a>UINavigationBar和UITabBar</h2><p>问题: 设置颜色方法在iOS 15中失效了</p>
-<p>在iOS 13更新的API中新增了针对navigationBar,tabbar分别新增了新的属性专门管理这些滑动时候产生的颜色透明等等信息，由于我们app根据业务要求还需要向下兼容iOS 9和iOS 10等等，对于导航栏的设置还没有使用UINavigationBarAppearance和UITabBarAppearance来设置，导致更新iOS 15以后原有设置方式就失效了。</p>
-<p>使用</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">/// UITabbar</span><br><span class="line">if #available(iOS 15, *) &#123;</span><br><span class="line">    let bar = UITabBarAppearance.init()</span><br><span class="line">    bar.backgroundColor = UIColor.white</span><br><span class="line">    bar.shadowImage = UIColor.init(0xEEEEEE).image</span><br><span class="line">    let selTitleAttr = [</span><br><span class="line">        NSAttributedString.Key.font: itemFont,</span><br><span class="line">        NSAttributedString.Key.foregroundColor: UIColor.theme</span><br><span class="line">    ]</span><br><span class="line">    bar.stackedLayoutAppearance.selected.titleTextAttributes = selTitleAttr // 设置选中attributes</span><br><span class="line">    self.tabBar.scrollEdgeAppearance = bar</span><br><span class="line">    self.tabBar.standardAppearance = bar</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">/// UINavigationBar</span><br><span class="line">if #available(iOS 13.0, *) &#123;</span><br><span class="line">  let appearance = UINavigationBarAppearance()</span><br><span class="line">  appearance.configureWithOpaqueBackground()</span><br><span class="line">  appearance.backgroundImage = UIImage()</span><br><span class="line">  appearance.shadowImage = UIImage()</span><br><span class="line">  appearance.shadowColor = UIColor.clear</span><br><span class="line">  nav.navigationBar.standardAppearance = appearance</span><br><span class="line">  nav.navigationBar.scrollEdgeAppearance = nav.navigationBar.standardAppearance</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-<h2 id="UITableView"><a href="#UITableView" class="headerlink" title="UITableView"></a>UITableView</h2><p>在iOS 15里，UITableView新增了sectionHeaderTopPadding的属性，即在section header的上方的填充，默认值是UITableViewAutomaticDimension，高度为22个像素。我们在iOS 15上需要将这个属性的值设置为0，否则我们所有的tableView列表上将会多出22个像素的高度。</p>
-<p>使用</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">/// 可以在创建UITableView的实例时，做如下设置:</span><br><span class="line"></span><br><span class="line">if #available(iOS 15, *) &#123;</span><br><span class="line">    tableView.sectionHeaderTopPadding = 0</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>或者</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/// 全局设置</span><br><span class="line">if #available(iOS 15, *) &#123;</span><br><span class="line">   UITableView.appearance().sectionHeaderTopPadding = 0</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>总的来说，iOS 15的工作量较小，适配相对简单易行~~</p>
+        <h2 id="回顾"><a href="#回顾" class="headerlink" title="回顾"></a>回顾</h2><p>今年是2021年的最后一天了，距离2022年也就剩几个小时了，不经感叹时光过得可真快啊。回想这一年来的种种瞬间，经历的事情，内心可谓五味杂陈。趁着最后的几个小时的时间，本人就把今年所经历的事情做一个回顾。</p>
+<h3 id="离别"><a href="#离别" class="headerlink" title="离别"></a>离别</h3><p>说起离别一词，总是会想到有再见的一天。但有时候却再也见不到了。<br /></p>
+<p>今年四月份，我的爷爷过世了，从此与他阴阳相隔。过世前，子女，孙辈都纷纷赶回老家，看望病重的爷爷，因为大家心里都知道，见一面就是少一面，也许也是最后一面。爷爷过世的那几天，在老家的祠堂里，不分昼夜地举行着祭奠仪式，耳边总是围绕着刺耳的锣鼓声，大家都围在爷爷身边守夜，各自回想起爷爷在世的种种场景。<br /></p>
+<p>爷爷过世后，我们对奶奶的关心也变得多了起来，生怕奶奶深受爷爷过世的打击而挺不住。但是不到半年，奶奶也因为身体病痛的原因与世长辞了，追随我爷爷去了。奶奶走的时候是相当痛苦的，奶奶的过世也让她不用再承受身体上的病痛。那时候是8月份，依然是在老家的祠堂举行祭奠仪式，人还是那些人，只是主角换成奶奶。<br /></p>
+<p>爷爷奶奶的去世，让我都深受打击，我原以为我做好亲人离别的准备，但真正来临的那一刻，却还是有那么一点无法接收，更何况是两位老人在短时间里相继离世。<br /></p>
+<p>但生活还得继续，还有其他亲人需要联络感情，希望爷爷奶奶在那一边能够过得好，不需要他们为我们担心。</p>
+<h3 id="而立之年"><a href="#而立之年" class="headerlink" title="而立之年"></a>而立之年</h3><p>2021年也是我的而立之年，已经不是20岁的年轻小伙，毕竟已经成家，有了小孩，需要照顾我的家庭，肩上的责任一下子重了起来。希望自己有所成长，有所转变，有所积累。完成了今年一直想实现的一个目标，就是建立个人博客，记录生活与工作，培养一个写文章的习惯。工作上嘛，今年并不算很忙，却还是能学到一些东西。而立之年所经历的事情，或多或少对自己是一种成长。</p>
+<h3 id="小棉袄"><a href="#小棉袄" class="headerlink" title="小棉袄"></a>小棉袄</h3><p>去年念念的出生，给我和我老婆的生活增添了许多乐趣。今年一整年，我和我老婆一直围绕着念念转，从百日到周岁，见证了人类幼崽的迷之成长过程。我很感谢我的老婆，带给我一个这个可爱的小棉袄，这一年我老婆对于这个家庭的付出很大，既要忙于事业，也要陪伴念念的成长。每一个周末，我们一家三口都会外出与大自然亲近，度过极其有意义的亲子时光，累并快乐着。</p>
+<h3 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h3><p>今年过得起起落落，爷爷奶奶的去世，我的30岁生日，爸爸的60大寿，念念（闺女小名）的一周岁生日，都是值得回忆的。生活在继续，一切都往好的方向发展，调整好心态，迎接新的一年，接受新的挑战。Fighting~~</p>
+<h2 id="对未来的规划"><a href="#对未来的规划" class="headerlink" title="对未来的规划"></a>对未来的规划</h2><p>对于即将到来的2022年，希望自己在新的一年里给自己定几个目标:<br /><br>1、多写一些知识积累的文章。<br>2、看一些书籍，因为我并不爱看书，但是又希望能够多获取一些专业知识，所以必须逼自己多看书籍，可以是专业书籍或者是其它的对自己有帮助的书籍。<br>3、有时间多陪陪我的闺女，希望她成长的每一个重要的时刻，我都能够在场见证。<br>4、减肥计划-只是想把肚子减一减，维持一个好的体型，顺便也是为了多运动一下，给自己身体减减压，充充电。</p>
 
     </div>
 
@@ -259,19 +245,16 @@
     
 
     <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/iOS/" rel="tag"># iOS</a>
-          </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
+                <a href="/2021/11/29/iOS15-Adaptive/" rel="prev" title="iOS15 适配总结">
+                  <i class="fa fa-chevron-left"></i> iOS15 适配总结
+                </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2021/12/31/Looking-back-at-2021/" rel="next" title="回顾2021年">
-                  回顾2021年 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
